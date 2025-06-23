@@ -3,6 +3,8 @@ import 'package:flutter_crud/data/dummy_users.dart';
 import 'package:flutter_crud/components/user_title.dart';
 
 class UserList extends StatelessWidget {
+  const UserList({super.key});
+
   @override
   Widget build(BuildContext context) {
     final users = {...DUMMY_USERS};

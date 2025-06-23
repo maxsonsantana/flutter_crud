@@ -4,18 +4,18 @@ import 'package:flutter_crud/models/user.dart';
 class UserTile extends StatelessWidget {
   final User user;
 
-  const UserTile(this.user);
+  const UserTile(this.user, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    final avatar = user.avatarUrl == null || user.avatarUrl.isEmpty
+    final avatar = user.avatarUrl.isEmpty
         ? CircleAvatar(child: Icon(Icons.person, size: 40, color: Colors.white))
         : CircleAvatar(backgroundImage: NetworkImage(user.avatarUrl));
     return ListTile(
       leading: avatar,
       title: Text(user.name),
       subtitle: Text(user.email),
-      trailing: Container(
+      trailing: SizedBox(
         width: 100,
         child: Row(
           mainAxisSize: MainAxisSize.min,
